@@ -1,0 +1,6 @@
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\bin\Debug\EveryonePermission.exe
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\bin\Debug\EveryonePermission.pdb
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Debug\EveryonePermission.csproj.AssemblyReference.cache
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Debug\EveryonePermission.csproj.CoreCompileInputs.cache
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Debug\EveryonePermission.exe
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Debug\EveryonePermission.pdb

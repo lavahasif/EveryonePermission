@@ -131,7 +131,7 @@ namespace EveryonePermission
 // Using this instead of the "Everyone" string means we work on non-English systems.
             SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
             sec.AddAccessRule(new FileSystemAccessRule(everyone,
-                FileSystemRights.Modify | FileSystemRights.Synchronize,
+                FileSystemRights.FullControl|FileSystemRights.Modify | FileSystemRights.Synchronize,
                 InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None,
                 AccessControlType.Allow));
             Directory.SetAccessControl(path, sec);
@@ -151,7 +151,7 @@ namespace EveryonePermission
                 SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
 // Add the FileSystemAccessRule to the security settings.
                 fSecurity.AddAccessRule(new FileSystemAccessRule(everyone,
-                    FileSystemRights.Modify | FileSystemRights.Synchronize,
+                    FileSystemRights.FullControl|FileSystemRights.Modify | FileSystemRights.Synchronize,
                     InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None,
                     AccessControlType.Allow));
 
@@ -167,7 +167,7 @@ namespace EveryonePermission
 // Add the FileSystemAccessRule to the security settings.
             SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
             fSecurity.AddAccessRule(new FileSystemAccessRule(everyone,
-                FileSystemRights.Modify | FileSystemRights.Synchronize,
+                FileSystemRights.FullControl|FileSystemRights.Modify | FileSystemRights.Synchronize,
                 AccessControlType.Allow));
 
 // Set the new access settings.

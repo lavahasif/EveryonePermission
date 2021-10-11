@@ -4,3 +4,6 @@ C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Release\E
 C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Release\EveryonePermission.csproj.CoreCompileInputs.cache
 C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Release\EveryonePermission.exe
 C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Release\EveryonePermission.pdb
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\bin\Release\RestSharp.dll
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\bin\Release\RestSharp.xml
+C:\Users\Hasif\RiderProjects\EveryonePermission\EveryonePermission\obj\Release\EveryonePermission.csproj.CopyComplete

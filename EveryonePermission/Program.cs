@@ -6,6 +6,7 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 using System.Windows.Forms;
+using RestSharp;
 
 namespace EveryonePermission
 {
@@ -13,6 +14,20 @@ namespace EveryonePermission
     {
         [STAThread]
         public static void Main(string[] args)
+        {
+            new whatsapp().bymannual("919747200785", "Hello world", "EKTH6T5CQHDN14BSIT60");
+            var baseUrl =
+                "https://panel.rapiwha.com/send_message.php?apikey=EKTH6T5CQHDN14BSIT60&number=919747200785&text=Thangals";
+            new whatsapp().byurl(baseUrl);
+            new whatsapp().byTest();
+            var client = new RestClient(baseUrl);
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            // GO();
+        }
+
+        private static void GO()
         {
             // SetDraw();
             var appExePath = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
@@ -131,7 +146,7 @@ namespace EveryonePermission
 // Using this instead of the "Everyone" string means we work on non-English systems.
             SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
             sec.AddAccessRule(new FileSystemAccessRule(everyone,
-                FileSystemRights.FullControl|FileSystemRights.Modify | FileSystemRights.Synchronize,
+                FileSystemRights.FullControl | FileSystemRights.Modify | FileSystemRights.Synchronize,
                 InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None,
                 AccessControlType.Allow));
             Directory.SetAccessControl(path, sec);
@@ -141,7 +156,7 @@ namespace EveryonePermission
         {
             var readOnlyCollection = Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(path,
                 Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories,
-                new string[] {"*.mdf", "*.ldf,*.MDF,*.LDF"});
+                new string[] { "*.mdf", "*.ldf,*.MDF,*.LDF" });
             foreach (var s in readOnlyCollection)
             {
                 // Get a FileSecurity object that represents the
@@ -151,7 +166,7 @@ namespace EveryonePermission
                 SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
 // Add the FileSystemAccessRule to the security settings.
                 fSecurity.AddAccessRule(new FileSystemAccessRule(everyone,
-                    FileSystemRights.FullControl|FileSystemRights.Modify | FileSystemRights.Synchronize,
+                    FileSystemRights.FullControl | FileSystemRights.Modify | FileSystemRights.Synchronize,
                     InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None,
                     AccessControlType.Allow));
 
@@ -167,7 +182,7 @@ namespace EveryonePermission
 // Add the FileSystemAccessRule to the security settings.
             SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
             fSecurity.AddAccessRule(new FileSystemAccessRule(everyone,
-                FileSystemRights.FullControl|FileSystemRights.Modify | FileSystemRights.Synchronize,
+                FileSystemRights.FullControl | FileSystemRights.Modify | FileSystemRights.Synchronize,
                 AccessControlType.Allow));
 
 // Set the new access settings.
@@ -186,7 +201,7 @@ namespace EveryonePermission
             string vertical = "║";
             string horizontal = "═";
 
-            string[] lines = s.Split(new char[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = s.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
 
             int longest = 0;
@@ -210,7 +225,7 @@ namespace EveryonePermission
             // box contents
             foreach (string line in lines)
             {
-                double dblSpaces = (((double) width - (double) line.Length) / (double) 2);
+                double dblSpaces = (((double)width - (double)line.Length) / (double)2);
                 int iSpaces = Convert.ToInt32(dblSpaces);
 
                 if (dblSpaces > iSpaces) // not an even amount of chars
